@@ -1,0 +1,130 @@
+/* Reset de márgenes y paddings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Fondo general */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: black;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Línea animada */
+.line {
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, orange, yellow, red);
+    animation: move 5s linear infinite;
+    top: 50%; /* Línea centrada verticalmente */
+    transform: translateY(-50%);
+    z-index: 10;
+}
+
+/* Animación de la línea */
+@keyframes move {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+/* Título principal */
+h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Párrafo introductorio */
+p.lead {
+    font-size: 1.2em;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+/* Contenedor de botones */
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap; /* Ajuste en pantallas pequeñas */
+}
+
+/* Botones y enlaces */
+.button, a.button {
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    background-color: transparent;
+    border: 2px solid white;
+    padding: 15px 30px;
+    font-size: 1.5em;
+    margin: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
+    text-align: center;
+}
+
+/* Hover en botones */
+.button:hover, a.button:hover {
+    transform: scale(1.1);
+    background-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 16px rgba(255, 255, 255, 0.4);
+}
+
+/* Estilo del footer */
+.footer {
+    background-color: #121212;
+    color: #f1f1f1;
+    padding: 20px 0;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Footer texto */
+.footer p {
+    font-size: 1em;
+    margin: 0;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5em;
+    }
+
+    .button, a.button {
+        font-size: 1.2em;
+        padding: 10px 20px;
+    }
+}
+
+@media (max-width: 576px) {
+    h1 {
+        font-size: 2em;
+    }
+
+    p.lead {
+        font-size: 1em;
+    }
+
+    .button, a.button {
+        font-size: 1em;
+        padding: 8px 16px;
+    }
+}
